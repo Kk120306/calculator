@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Calculator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.0/math.min.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="calculator">
             <div class="display">
+                <div class="eval-text" id="eval-text"></div>
                 <div class="display-text" id="display-text">0</div>
             </div>
             <div class="keys">
@@ -44,7 +46,6 @@
             </div>
         </div>
     </div>
-    
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>

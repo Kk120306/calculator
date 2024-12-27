@@ -1,8 +1,11 @@
 const numKey = document.querySelectorAll('.num-key');
 const display = document.querySelector('.display-text');
 const operatorKey = document.querySelectorAll('.operator-key');
+const evalText = document.querySelector('.eval-text');
 
 const regex = /[+\-*/]/;
+
+
 
 
 numKey.forEach((key) => {
@@ -16,28 +19,25 @@ numKey.forEach((key) => {
 
 operatorKey.forEach((key) => {
     key.addEventListener('click', () => {
-        // implement the logic to limit the operator key to shown once, replace is other chosen
-        if (key.value === '='){
-            display.textContent = calcSum(display.textContent);
-        } else if (regex.test(display.textContent.split('').pop())){
-            display.textContent = display.textContent.substring(0, display.textContent.length - 1) + key.value;
-            
-        }else{
-            display.textContent += key.value;
+        if (regex.test(evalText.textContent.split('').pop()) && display.textContent === '' && key.value !== '='){
+            evalText.textContent = evalText.textContent.substring(0, evalText.textContent.length - 1) + key.value;
+        } else if (regex.test(evalText.textContent.split('').pop()) && display.textContent !== ''){
+            evalExpression(evalText.textContent,key.value,display.textContent);
+        }else {
+            evalText.textContent = display.textContent + key.value;
+            display.textContent = '';
         }
-        
-
     })
 });
 
-function calcSum(expression){
-    const expressionArray = [...expression];
-    let result = 0;
 
-    expressionArray.forEach((char) => {
-        if (char === '+'){
-
-        }
-    })
+function evalExpression(pre, operator, post){
+    const evaluated = math.evaluate(pre + post);
+    if (operator === '='){
+        display.textContent = evaluated;
+        evalText.textContent = '';
+    } else {
+        display.textContent = '';
+        evalText.textContent = evaluated + operator
+    }
 }
-

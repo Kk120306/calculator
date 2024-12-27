@@ -57,13 +57,25 @@ body{
 #deleteBtn{
     font-size: 3rem;
 }
+.display-text, .eval-text{
+    font-family: Arimo Hebrew Subset, sans-serif;
+    position: absolute;
+    right: 0;
+    padding: 10px;
+}
+
 .display-text{
     color: #ffffff;
     font-size: 4rem;
-    font-family: Arimo Hebrew Subset, sans-serif;
     font-weight: bold;
     bottom: 0;
-    position: absolute;
-    right: 0; 
-    padding: 10px;
+}
+
+.eval-text{
+    color: #CCCDD7;
+    font-size: 1.5rem;
+    font-weight: 500;
+    opacity: 0.6;
+    top: 25px;
+    padding: 13px;
 }
