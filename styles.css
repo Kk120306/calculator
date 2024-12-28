@@ -9,19 +9,40 @@ body{
     flex-direction: column;
 }
 
+.header{
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin-top : 40px;
+}
+
+h1{
+    font-family: latto, sans-serif;
+    opacity: .6;
+    font-size: 2rem;
+    right: 0;
+
+}
+
 .display{
     background-color: #1E1E1E;
     width: auto;
     height: 150px;
     border: 4px solid #27292E;
     position: relative;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border-radius: 10px;
 }
 
 .keys{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: auto; 
-    grid-gap: 1px;
+    grid-gap: 4px;
     
 }
 
@@ -37,7 +58,17 @@ body{
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    border-radius: 7%;
+    border-radius: 7px;
+    border: 4px solid #27292E; 
+}
+
+.key:hover{
+    background-color: #1E1E1E;
+}
+
+.key:active {
+    transform: scale(0.9);
+
 }
 
 .operator-key{
@@ -47,6 +78,7 @@ body{
     grid-column: span 4; 
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
+    grid-gap: 4px;
 }
 
 .last-line .key {
@@ -78,4 +110,9 @@ body{
     opacity: 0.6;
     top: 25px;
     padding: 13px;
+}
+
+
+.del-key{
+    padding: 25px;
 }
